@@ -1,0 +1,33 @@
+{
+  "name": "SurveyResponse",
+  "type": "object",
+  "properties": {
+    "user_type": {
+      "type": "string",
+      "enum": [
+        "employee",
+        "stakeholder",
+        "customer"
+      ],
+      "description": "Type of respondent"
+    },
+    "responses": {
+      "type": "object",
+      "description": "All question-answer pairs",
+      "additionalProperties": true
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether survey is completed"
+    },
+    "completion_time": {
+      "type": "number",
+      "description": "Time taken to complete survey in seconds"
+    }
+  },
+  "required": [
+    "user_type",
+    "responses"
+  ]
+}
